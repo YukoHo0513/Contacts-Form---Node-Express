@@ -1,0 +1,96 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <h3>Sales</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <% for (let element of sales) {%>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <%= element.id %>
+                        </th>
+                        <td>
+                            <a href="/contacts/<%= element.id %> "><%= element.name %></a>
+                        </td>
+                        <td>
+                            <%= element.address %>
+                        </td>
+                        <td>
+                            <%= element.message %>
+                        </td>
+                    </tr>
+                </tbody>
+                <% } %>
+        </table>
+    </div>
+    <div class="container">
+        <h3>Marketing</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <% for (let element of marketing) {%>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <%= element.id %>
+                        </th>
+                        <td>
+                            <a href="/contacts/<%= element.id %> "><%= element.name %></a>
+                        </td>
+                        <td>
+                            <%= element.address %>
+                        </td>
+                        <td>
+                            <%= element.message %>
+                        </td>
+                    </tr>
+                </tbody>
+                <% } %>
+        </table>
+    </div>
+    <div class="container">
+        <h3>Technical</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <% for (let element of technical) {%>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <%= element.id %>
+                        </th>
+                        <td>
+                            <a href="/contacts/<%= element.id %> "><%= element.name %></a>
+                        </td>
+                        <td>
+                            <%= element.address %>
+                        </td>
+                        <td>
+                            <%= element.message %>
+                        </td>
+                    </tr>
+                </tbody>
+                <% } %>
+        </table>
+    </div>
+    <%- include('./partials/footer.ejs') %>

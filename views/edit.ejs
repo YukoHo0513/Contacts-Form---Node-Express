@@ -1,0 +1,71 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        <h3>Edit Form</h3>
+        <form action="/contacts/<%= contact.id %> " method="POST">
+            <input type="hidden" name="_method" value="PATCH">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input value="<%= contact.name %> " name="name" type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input value="<%= contact.address %> " name="address" type="text" class="form-control" id="address">
+            </div>
+            <div>
+                <div>Department</div>
+                <div class="form-check">
+                    <% if (contact.department==="sales" ) {%>
+                        <input value="sales" class="form-check-input" type="radio" name="department" id="sales" checked>
+                        <label class="form-check-label" for="sales">
+                            Sales
+                        </label>
+                        <% } else {%>
+                            <input value="sales" class="form-check-input" type="radio" name="department" id="sales">
+                            <label class="form-check-label" for="sales">
+                                Sales
+                            </label>
+                            <% } %>
+                </div>
+                <div class="form-check">
+                    <% if (contact.department==="marketing" ) {%>
+                        <input value="marketing" class="form-check-input" type="radio" name="department" id="marketing"
+                            checked>
+                        <label class="form-check-label" for="marketing">
+                            Marketing
+                        </label>
+                        <% } else { %>
+                            <input value="marketing" class="form-check-input" type="radio" name="department"
+                                id="marketing">
+                            <label class="form-check-label" for="marketing">
+                                Marketing
+                            </label>
+                            <% } %>
+                </div>
+                <div class="form-check">
+                    <% if (contact.department=== "technical") {%>
+                        <input value="technical" class="form-check-input" type="radio" name="department" id="technical"
+                            checked>
+                        <label class="form-check-label" for="technical">
+                            Technical
+                        </label>
+                        <% } else {%>
+                            <input value="technical" class="form-check-input" type="radio" name="department"
+                                id="technical" checked>
+                            <label class="form-check-label" for="technical">
+                                Technical
+                            </label>
+                            <% } %>
+                </div>
+            </div>
+            <div class="mt-3 mb-3">
+                <label for="messsage" class="form-label">Message</label>
+                <textarea name="message" class="form-control" id="message" rows="3"><%= contact.message %> </textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Edit Submit">
+
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
